@@ -1,0 +1,15 @@
+Réponse question 1 : 
+
+Comment dans le code de reconnait_0 allez vous représenter le fait qu'en lisant un a,
+on puisse aller soit de l'état 0 à l'état 1, soit de l'état 0 à l'état 2 ?
+
+	Il suffit à partir de l'état 0 de faire un appel des 2 fonction correspondant à l'état 1 et 2 et de faire
+	un "ou" sur les valeurs retournées par celles-ci.
+
+Comment dans le code de reconnait_1 allez vous représenter le fait que l'on peut passer
+directement, sans rien lire, à l'état 2 ?
+	
+	Sachant que l'état 2 est accesible par le epsilon,
+	cela se traduit dans le code par un "ou" comme pour la premiere question 
+	
+	
