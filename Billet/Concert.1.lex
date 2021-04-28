@@ -67,5 +67,5 @@ ligneConcert T{number}{2,6}{blancs}{nomConcert}{blancs}{date}{blancs}{horaire}{b
                             fprintf(stderr,"Mot non reconnu : %s\n",yytext);
                             return 0;
                     }
-<<EOF>> {printf("FinFichier\n"); return 0;}
+<<EOF>				{printf("FinFichier\n"); return 0;}
 %%

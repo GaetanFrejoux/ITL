@@ -56,10 +56,10 @@ let reconnaitReelRec string = reconnaitRec_0 string;;
 
 (*Affiche le resultat*)
 let printResultat string =
-  printf "\nPour la valeur %s\n" string;
+  printf "Pour la valeur %s\n" string;
   if reconnaitReelRec string
-  then printf "La valeur est un float\n"
-  else print_endline "La valeur n'est pas un float\n"
+  then print_endline "La valeur est un float\n\nProchaine valeur :"
+  else print_endline "La valeur n'est pas un float\n\nProchaine valeur :"
 ;;
 
 (*Les tests demandés*)
@@ -69,8 +69,4 @@ let test = ["123.";"123.45";"-123.";"+123.34";"-123.34";
 List.map (fun x -> printResultat x) test;;
 
 (*Scanner des inputs*)
-let analyse =
-  while(true) do
-    print_string "Prochaine valeur :"; printResultat (input_line stdin);
-  done;
-;;
+let analyse = while(true) do printResultat (input_line stdin); done;;

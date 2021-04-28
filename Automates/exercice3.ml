@@ -45,9 +45,12 @@ let reconnaitRecL4 string = reconnaitRec_0 string;;
 
 (*Affiche le resultat*)
 let printResultat string =
-  printf "\nvaleur :%s\n" string ;
-  printf "output : %b\n\n" (reconnaitRecL4 string)
+  printf "Pour la valeur %s\n" string;
+  if reconnaitRecL4 string
+  then print_endline "La valeur est correct\n\nProchaine valeur :"
+  else print_endline "La valeur n'est pas correct\n\nProchaine valeur :"
 ;;
+
 
 (*Les tests demandés*)
 let test = ["abbcca";"accca";"abbccccba"];;
@@ -55,9 +58,4 @@ let test = ["abbcca";"accca";"abbccccba"];;
 List.map (fun x -> printResultat x) test;;
 
 (*Scanner des inputs*)
-let analyse =
-  while(true) do
-    printf "Prochaine valeur : ";
-    printResultat (input_line stdin)
-  done;
-;;
+let analyse = while(true) do printResultat (input_line stdin) done;;

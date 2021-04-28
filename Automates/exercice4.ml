@@ -68,8 +68,28 @@ let printResultat string =
   let isFloat,ans = evalueReelRec string in
   printf "\nPour la valeur %s\n" string;
   if isFloat
-  then (printf "La valeur est un float, sa valeur : %f\n\n" ans)
-  else (print_endline "La valeur n'est pas un float\n")
+  then
+    (
+      printf "La valeur est un float, sa valeur : %f\n\n" ans;
+      printf "Prochaine valeur : ";
+    )
+  else
+    (
+      print_endline "La valeur n'est pas un float\n";
+      printf "Prochaine valeur : ";
+    )
+;;
+let printResultat string =
+  let isFloat,ans = evalueReelRec string in
+  printf "Pour la valeur %s\n" string;
+  if isFloat
+  then
+    (
+      print_endline "\nLa valeur est correct, sa valeur :";
+      print_float ans;
+      print_endline "\n\n\nProchaine valeur :\n"
+    )
+  else print_endline "\nLa valeur n'est pas correct\n\n\nProchaine valeur :\n"
 ;;
 
 (*Les tests demandés*)
@@ -79,8 +99,4 @@ let test = ["3.14";"002.24";"-3.14"; "1000.14";"123.";"123.453";"-123.";
 List.map (fun x -> printResultat x) test;;
 
 (*Scanner des inputs*)
-let analyse =
-  while(true) do
-    print_string "Prochaine valeur :"; printResultat (input_line stdin);
-  done;
-;;
+let analyse = while(true) do printResultat (input_line stdin) done;;
